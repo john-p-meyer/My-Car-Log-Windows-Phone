@@ -1,0 +1,17 @@
+﻿<vm:MainViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:CarLog.ViewModels"
+    xmlns:dm="clr-namespace:CarLog.DataModel"
+    >
+
+    <vm:MainViewModel.Cars>
+        <dm:Car Make="Kia" Model="Spectra 5" VIN="KNAFE1234567890" Year="2008" Title="John's Car" Odometer="75000"/>
+        <dm:Car Make="Ford" Model="F-150 XLT" VIN="KNAFE0987654321" Year="1998" Title="Gloria's Car" Odometer="155000"/>
+        <!--vm:ItemViewModel LineOne="design three" LineTwo="Habitant inceptos interdum lobortis" LineThree="Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"/>
+        <vm:ItemViewModel LineOne="design four" LineTwo="Nascetur pharetra placerat pulvinar" LineThree="Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"/>
+        <vm:ItemViewModel LineOne="design five" LineTwo="Sagittis senectus sociosqu suscipit" LineThree="Dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis"/>
+        <vm:ItemViewModel LineOne="design six" LineTwo="Torquent ultrices vehicula volutpat" LineThree="Senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend"/-->
+    </vm:MainViewModel.Cars>
+
+</vm:MainViewModel>

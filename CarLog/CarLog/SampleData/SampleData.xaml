@@ -1,0 +1,47 @@
+﻿<vm:MainViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="clr-namespace:CarLog.Core.ViewModels;assembly=CarLog.Core"
+    xmlns:vmi="clr-namespace:CarLog.Core.DataModel;assembly=CarLog.Core"
+    xmlns:settings="clr-namespace:CarLog">
+        
+    <vm:MainViewModel.Cars>
+        <vmi:Car Make="Kia" Model="Spectra 5" Year="2008" Title="John's Car" StartOdometer="85894" CurrentOdometer="93173" VIN="123456789ABCDE" BankName="5/3 Bank" BankAccountNumber="1234567891011" BankPayment="369.72" InsuranceName="Geico" InsuranceAccountNumber="1110987654321" InsurancePayment="69.13">
+            <vmi:Car.FuelEvents>
+                <vmi:FuelEvent DateTime="2013-08-05" FuelGrade="Regular" Title="August 05, 2013" Price="3.499" Odometer="86326" Distance="432" Quantity="14.188" IgnoreForStats="False" Location="Speedway" Note="A really long note just to see what happens, let's include a \n line break just to see how that works." CarTitle="John's Car" />
+                <vmi:FuelEvent DateTime="2013-08-07" FuelGrade="Regular" Title="August 07, 2013" Price="3.319" Odometer="86594" Distance="268" Quantity="9.189" IgnoreForStats="False" Location="Shell" CarTitle="John's Car" />
+                <vmi:FuelEvent DateTime="2013-08-12" FuelGrade="Regular" Title="August 12, 2013" Price="3.219" Odometer="86972" Distance="378" Quantity="11.295" IgnoreForStats="False" Location="BP" CarTitle="John's Car" />
+                <vmi:FuelEvent DateTime="2013-08-14" FuelGrade="Regular" Title="August 14, 2013" Price="3.239" Odometer="87236" Distance="264" Quantity="8.799" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-08-17" FuelGrade="Regular" Title="August 17, 2013" Price="0.000" Quantity="0.000" Odometer="87616" Distance="380" Note="Don't use no gas information" IgnoreForStats="True" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-08-19" FuelGrade="Regular" Title="August 19, 2013" Price="3.369" Quantity="8.013" Odometer="87869" Distance="253" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-08-23" FuelGrade="Regular" Title="August 23, 2013" Price="3.519" Quantity="11.508" Odometer="88238" Distance="369" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-08-25" FuelGrade="Regular" Title="August 25, 2013" Price="0.000" Quantity="0.000" Odometer="88532" Distance="294" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-08-28" FuelGrade="Regular" Title="August 28, 2013" Price="3.349" Quantity="10.450" Odometer="88842" Distance="310" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-08-31" FuelGrade="Regular" Title="August 31, 2013" Price="3.499" Quantity="13.155" Odometer="89202" Distance="360" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-03" FuelGrade="Regular" Title="September 03, 2013" Price="3.449" Quantity="13.047" Odometer="89606" Distance="404" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-06" FuelGrade="Regular" Title="September 06, 2013" Price="3.369" Quantity="11.130" Odometer="89964" Distance="358" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-09" FuelGrade="Regular" Title="September 09, 2013" Price="3.300" Quantity="7.274" Odometer="90217" Distance="253" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-12" FuelGrade="Regular" Title="September 12, 2013" Price="3.219" Quantity="8.697" Odometer="90472" Distance="255" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-15" FuelGrade="Regular" Title="September 15, 2013" Price="3.189" Quantity="9.720" Odometer="90727" Distance="255" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-18" FuelGrade="Regular" Title="September 18, 2013" Price="3.169" Quantity="10.255" Odometer="91063" Distance="336" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-19" FuelGrade="Regular" Title="September 19, 2013" Price="3.199" Quantity="4.220" Odometer="91176" Distance="113" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-21" FuelGrade="Regular" Title="September 21, 2013" Price="3.519" Quantity="6.591" Odometer="91405" Distance="229" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-24" FuelGrade="Regular" Title="September 24, 2013" Price="3.329" Quantity="11.414" Odometer="91782" Distance="377" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-25" FuelGrade="Regular" Title="September 25, 2013" Price="3.269" Quantity="7.494" Odometer="91980" Distance="198" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-27" FuelGrade="Regular" Title="September 27, 2013" Price="3.159" Quantity="7.597" Odometer="92201" Distance="221" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-09-30" FuelGrade="Regular" Title="September 30, 2013" Price="3.169" Quantity="11.509" Odometer="92596" Distance="395" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-10-02" FuelGrade="Regular" Title="October 02, 2013" Price="3.119" Quantity="8.062" Odometer="92831" Distance="235" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-10-06" FuelGrade="Regular" Title="October 06, 2013" Price="3.069" Quantity="10.102" Odometer="93173" Distance="342" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-10-09" FuelGrade="Regular" Title="October 09, 2013" Price="3.369" Quantity="11.575" Odometer="93537" Distance="364" Note="" IgnoreForStats="False" Location="Speedway" CarTitle="John's Car"/>
+                <vmi:FuelEvent DateTime="2013-10-12" FuelGrade="Regular" Title="October 12, 2013" Price="3.239" Quantity="12.503" Odometer="93890" Distance="353" Note="A really long note just to see what happens, let's include a \n line break just to see how that works." IgnoreForStats="False" Location="Speedway" CarTitle="John's Car" />
+            </vmi:Car.FuelEvents>
+            <vmi:Car.ServiceEvents>
+                <vmi:ServiceEvent DateTime="2013-06-15" ServiceEventType="Other" Location="Advance Auto Parts" Cost="11.99" Odometer="0.0" Note="Rear Wiper Blade 14 15190154" Title="Rear Wiper Blade" CarTitle="John's Car" />
+                <vmi:ServiceEvent DateTime="2013-09-18" ServiceEventType="Other" Location="Tireman: Holland" Cost="476.96" Odometer="90949" Note="Uniroyal Tiger Paw GTZ 87W 205/50ZR16 UN47509" Title="New Tires" CarTitle="John's Car" />
+            </vmi:Car.ServiceEvents>
+            <vmi:Car.Reminders>
+                <vmi:Reminder DateTime="2013-12-17" Distance="3000" EndDate="2014-03-17" EndOdometer="96890" IsRecurring="True" Months="3" Note="Oil Change" Odometer="93890" RecordStatus="NoChange" ReminderType="MonthsOrDistanceSince" ServiceEventType="OilChange" SyncStatus="Synced" Title="Oil Change" UpdateDate="2014-01-01" CarTitle="John's Car" />
+            </vmi:Car.Reminders>
+        </vmi:Car>
+    </vm:MainViewModel.Cars>    
+</vm:MainViewModel>

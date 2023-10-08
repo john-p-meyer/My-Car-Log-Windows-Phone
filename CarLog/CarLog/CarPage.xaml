@@ -1,0 +1,306 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CarLog.CarPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DataContext="{d:DesignData SampleData/SampleData.xaml}"    
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar Mode="Default" IsVisible="True">
+            <shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{Binding Cars[0]}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <!--Pivot Control-->
+        <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Grid.Row="0">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="{Binding Title}">
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        
+                        <Border Grid.Column="0" VerticalAlignment="Top" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="4" Padding="5">
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding AverageDistancePerQuantity, StringFormat=\{0:F1\}}" TextWrapping="NoWrap" HorizontalAlignment="Center" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" />
+                                <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.DistancePerQuantityShort, Source={StaticResource LocalizedVariableStrings}}" TextWrapping="NoWrap" HorizontalAlignment="Center" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" />
+                            </StackPanel>
+                        </Border>
+                    
+                        <StackPanel Grid.Column="1">
+                            <Grid x:Name="ContentPanelView" Margin="12,0,12,0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />                                
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="{Binding YearMakeModel, Mode=OneWay}" Grid.Row="0" Style="{StaticResource PhoneTextLargeStyle}" />
+                                <TextBlock Text="{Binding VIN, Mode=OneWay}" Grid.Row="1" Style="{StaticResource PhoneTextNormalStyle}"/>
+                                <StackPanel Orientation="Horizontal" Grid.Row="2">
+                                    <TextBlock Text="{Binding CurrentOdometer, StringFormat=\{0:N0\}}" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.DistanceShort, Source={StaticResource LocalizedVariableStrings}}" TextWrapping="NoWrap" Margin="2 0 10 0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                </StackPanel>
+
+                                <TextBlock Text="{Binding Path=LocalizedResources.RefuelAverages, Source={StaticResource LocalizedStrings}}" Grid.Row="3" Margin="10,15,10,0" Style="{StaticResource PhoneTextLargeStyle}" />
+
+                                <Grid Grid.Row="4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="{Binding AveragePricePaidPerQuantity, StringFormat=\{0:C3\}}" Grid.Column="0" TextWrapping="NoWrap" Margin="10, -2, 10, 0" Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                    <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                        <TextBlock Text="{Binding AverageDistancePerFillUp, StringFormat=\{0:F1\}}" TextWrapping="NoWrap" Margin="10, -2, 10, 0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                        <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.DistanceShort, Source={StaticResource LocalizedVariableStrings}}" TextWrapping="NoWrap" Margin="2 0 10 0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                        <TextBlock Text="{Binding AverageDaysBetweenFillUp, StringFormat=\{0:F0\}}" TextWrapping="NoWrap" Margin="10, -2, 10, 0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                        <TextBlock Text="{Binding Path=LocalizedResources.Days, Source={StaticResource LocalizedStrings}}" TextWrapping="NoWrap" Margin="2 0 10 0" Style="{StaticResource PhoneTextSubtleStyle}" />                                        
+                                    </StackPanel>
+                                </Grid>
+
+                                <StackPanel x:Name="CarLoanStackPanel" Orientation="Horizontal" Grid.Row="5" Margin="-37,25,10,0" Tap="CarLoan_Tap">
+                                    <Image x:Name="CarLoanExpandCollapse" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Fill" Width="35" Height="35" />
+                                    <TextBlock Text="{Binding Path=LocalizedResources.CarLoan, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" VerticalAlignment="Center" />    
+                                </StackPanel>                                
+                                <TextBlock x:Name="txtBankName" Text="{Binding BankName}" Grid.Row="6" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextNormalStyle}" />
+                                <TextBlock x:Name="txtBankAccountNumber" Text="{Binding BankAccountNumber}" Grid.Row="7" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                <TextBlock x:Name="txtBankPayment" Text="{Binding BankPayment, StringFormat=\{0:C2\}}" Grid.Row="8" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                <StackPanel x:Name="InsuranceStackPanel" Orientation="Horizontal" Grid.Row="9" Margin="-37,25,10,0" Tap="Insurance_Tap">
+                                    <Image x:Name="InsuranceExpandCollapse" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Fill" Width="35" Height="35" />
+                                    <TextBlock Text="{Binding Path=LocalizedResources.Insurance, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" />
+                                </StackPanel>
+                                <TextBlock x:Name="txtInsuranceName" Text="{Binding InsuranceName}" Grid.Row="10" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextNormalStyle}" />
+                                <TextBlock x:Name="txtInsuranceAccountNumber" Text="{Binding InsuranceAccountNumber}" Grid.Row="11" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                <TextBlock x:Name="txtInsurancePayment" Text="{Binding InsurancePayment, StringFormat=\{0:C2\}}" Grid.Row="12" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
+
+                                <StackPanel x:Name="TotalCostStackPanel" Orientation="Horizontal" Grid.Row="13" Margin="-37,25,10,0" Tap="TotalCost_Tap">
+                                    <Image x:Name="TotalCostExpandCollapse" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Fill" Width="35" Height="35" />
+                                    <TextBlock Text="{Binding Path=LocalizedResources.TotalCosts, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextLargeStyle}" />
+                                </StackPanel>
+
+                                <Grid x:Name="GridTotalCost" Grid.Row="14">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Text="{Binding Path=LocalizedResources.MTD, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="0" TextWrapping="NoWrap" Margin="10, -2, 10, 0" Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    <TextBlock Text="{Binding TotalCostMonthToDate, StringFormat=\{0:C2\}}" TextWrapping="NoWrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="1" Grid.Row="0" />
+                                    <TextBlock Text="{Binding Path=LocalizedResources.YTD, Source={StaticResource LocalizedStrings}}" TextWrapping="NoWrap" Margin="10, -2, 10, 0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="0" Grid.Row="1" />
+                                    <TextBlock Text="{Binding TotalCostYearToDate, StringFormat=\{0:C2\}}" TextWrapping="NoWrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="1" Grid.Row="1" />
+                                    <TextBlock Text="{Binding Path=LocalizedResources.Month1, Source={StaticResource LocalizedStrings}}" TextWrapping="NoWrap" Margin="10, -2, 10, 0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="0" Grid.Row="2" />
+                                    <TextBlock Text="{Binding TotalCost1Month, StringFormat=\{0:C2\}}" TextWrapping="NoWrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="1" Grid.Row="2" />
+                                    <TextBlock Text="{Binding Path=LocalizedResources.Month3, Source={StaticResource LocalizedStrings}}" TextWrapping="NoWrap" Margin="10, -2, 10, 0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="0" Grid.Row="3" />
+                                    <TextBlock Text="{Binding TotalCost3Month, StringFormat=\{0:C2\}}" TextWrapping="NoWrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="1" Grid.Row="3" />
+                                    <TextBlock Text="{Binding Path=LocalizedResources.Month6, Source={StaticResource LocalizedStrings}}" TextWrapping="NoWrap" Margin="10, -2, 10, 0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="0" Grid.Row="4" />
+                                    <TextBlock Text="{Binding TotalCost6Month, StringFormat=\{0:C2\}}" TextWrapping="NoWrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="1" Grid.Row="4" />
+                                    <TextBlock Text="{Binding Path=LocalizedResources.Month12, Source={StaticResource LocalizedStrings}}" TextWrapping="NoWrap" Margin="10, -2, 10, 0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="0" Grid.Row="5" />
+                                    <TextBlock Text="{Binding TotalCost12Month, StringFormat=\{0:C2\}}" TextWrapping="NoWrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" Grid.Column="1" Grid.Row="5" />
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+            <!--Pivot item Fuel Log-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.PivotSubtitleFuelLog, Source={StaticResource LocalizedStrings}}">
+                <!--Double line list no text wrapping-->
+                <phone:LongListSelector x:Name="FuelEventLogSelector" Margin="0,0,-12,0" ItemsSource="{Binding FuelEvents}" SelectionChanged="LongListSelector_FuelEvent_SelectionChanged">
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="Transparent">
+                                <toolkit:ContextMenuService.ContextMenu>
+                                    <toolkit:ContextMenu>
+                                        <toolkit:MenuItem Click="Delete_FuelEvent_Click" Header="{Binding Path=LocalizedResources.Delete, Source={StaticResource LocalizedStrings}}" />
+                                        <toolkit:MenuItem Click="Edit_FuelEvent_Click" Header="{Binding Path=LocalizedResources.Edit, Source={StaticResource LocalizedStrings}}" />
+                                    </toolkit:ContextMenu>
+                                </toolkit:ContextMenuService.ContextMenu>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" Grid.RowSpan="4" VerticalAlignment="Center" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="4" Padding="5">
+                                        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding DistancePerQuantity, StringFormat=\{0:F1\}}" TextWrapping="NoWrap" HorizontalAlignment="Center" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" />
+                                            <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.DistancePerQuantityShort, Source={StaticResource LocalizedVariableStrings}}" TextWrapping="NoWrap" HorizontalAlignment="Center" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" />
+                                        </StackPanel>
+                                    </Border>
+                                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                                        <TextBlock Text="{Binding DateTime, StringFormat='MMMM dd, yyy'}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextLargeStyle}" />
+                                        <TextBlock Text="{Binding TotalCost, StringFormat=\{0:C\}}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextNormalStyle}" />
+                                        <TextBlock Text="{Binding FuelGrade}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextNormalStyle}" />
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Price, StringFormat=\{0:C3\}}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                            <TextBlock Text="{Binding Quantity, StringFormat=\{0:F3\}}" TextWrapping="NoWrap" Margin="10 0 2 0"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                            <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.QuantityShort, Source={StaticResource LocalizedVariableStrings}}" TextWrapping="NoWrap" Margin="2 0 10 0"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                            <TextBlock Text="{Binding Distance, StringFormat=\{0:F1\}}" TextWrapping="NoWrap" Margin="10 0 2 0"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                            <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.DistanceShort, Source={StaticResource LocalizedVariableStrings}}" TextWrapping="NoWrap" Margin="2 0 10 0"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+            </phone:PivotItem>
+
+            <!--Pivot item Service Log-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.PivotSubtitleServiceLog, Source={StaticResource LocalizedStrings}}">
+                <phone:LongListSelector x:Name="ServiceEventLogSelector" Margin="0,0,-12,0" ItemsSource="{Binding ServiceEvents}" SelectionChanged="LongListSelector_ServiceEvent_SelectionChanged">
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="Transparent">
+                                <toolkit:ContextMenuService.ContextMenu>
+                                    <toolkit:ContextMenu>
+                                        <toolkit:MenuItem Click="Delete_ServiceEvent_Click" Header="{Binding Path=LocalizedResources.Delete, Source={StaticResource LocalizedStrings}}" />
+                                        <toolkit:MenuItem Click="Edit_ServiceEvent_Click" Header="{Binding Path=LocalizedResources.Edit, Source={StaticResource LocalizedStrings}}" />
+                                    </toolkit:ContextMenu>
+                                </toolkit:ContextMenuService.ContextMenu>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Vertical" Grid.Column="0">
+                                        <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="4" Padding="5" Margin="5">
+                                            <Image Source="{Binding ServiceEventImagePath}" Height="120" Width="120" Stretch="UniformToFill" />
+                                        </Border>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                                        <TextBlock Text="{Binding DateTime, StringFormat='MMMM dd, yyy'}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextLargeStyle}" />
+                                        <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextNormalStyle}" />
+                                        <TextBlock Text="{Binding Cost, StringFormat=\{0:C\}}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextNormalStyle}" />
+                                        <TextBlock Text="{Binding Location}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextNormalStyle}" />
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Odometer, StringFormat=\{0:N0\}}" TextWrapping="NoWrap" Margin="10 0 2 0"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                            <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.DistanceShort, Source={StaticResource LocalizedVariableStrings}}" TextWrapping="NoWrap" Margin="2 0 10 0"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+            </phone:PivotItem>
+
+            <!-- Pivot Item Reminders -->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.PivotSubtitleReminderLog, Source={StaticResource LocalizedStrings}}">
+                <phone:LongListSelector x:Name="ReminderLogSelector" Margin="0,0,-12,0" ItemsSource="{Binding Reminders}" SelectionChanged="LongListSelector_Reminder_SelectionChanged">
+                    <phone:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="Transparent">
+                                <toolkit:ContextMenuService.ContextMenu>
+                                    <toolkit:ContextMenu>
+                                        <toolkit:MenuItem Click="Delete_Reminder_Click" Header="{Binding Path=LocalizedResources.Delete, Source={StaticResource LocalizedStrings}}" />
+                                        <toolkit:MenuItem Click="Edit_Reminder_Click" Header="{Binding Path=LocalizedResources.Edit, Source={StaticResource LocalizedStrings}}" />
+                                    </toolkit:ContextMenu>
+                                </toolkit:ContextMenuService.ContextMenu>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="4" Padding="5" Margin="5">
+                                        <Image Source="{Binding ServiceEventImagePath}" Height="120" Width="120" Stretch="UniformToFill" />
+                                    </Border>
+                                    <StackPanel Orientation="Vertical" Grid.Column="1">
+                                        <TextBlock Text="{Binding ReminderDateTime, StringFormat='MMMM dd, yyy'}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextLargeStyle}" />
+                                        <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextNormalStyle}" />
+                                        <TextBlock Text="{Binding ReminderTypeDisplay}" TextWrapping="NoWrap" Margin="10 0"  Style="{StaticResource PhoneTextNormalStyle}" />
+                                        <TextBlock Text="{Binding ReminderDueStatus}" TextWrapping="NoWrap" Margin="10 0 2 0"  Style="{StaticResource PhoneTextSubtleStyle}" />
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:LongListSelector.ItemTemplate>
+                </phone:LongListSelector>
+            </phone:PivotItem>
+
+            <!--Pivot item Charts-->
+            <!--phone:PivotItem Header="{Binding Path=LocalizedResources.PivotSubtitleCharts, Source={StaticResource LocalizedStrings}}">
+                <Grid/>
+            </phone:PivotItem-->
+        </phone:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>

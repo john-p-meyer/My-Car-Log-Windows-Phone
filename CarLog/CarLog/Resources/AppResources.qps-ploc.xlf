@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="AppResources.resx" tool-id="MultilingualAppToolkit" product-name="CarLog" product-version="1.0.0" build-num="0">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="2.1.2010.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resx">
+        <trans-unit translate="yes" id="Resx/ResourceFlowDirection" xml:space="preserve">
+          <source>LeftToRight</source>
+          <target state="translated">LeftToRight</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</note>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/ResourceLanguage" xml:space="preserve">
+          <source>en-US</source>
+          <target state="translated">qps-ploc</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</note>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/ApplicationTitle" xml:space="preserve">
+          <source>MY CAR LOG</source>
+          <target state="new">MY CAR LOG</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/AppBarButtonText" xml:space="preserve">
+          <source>add</source>
+          <target state="new">add</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/AppBarMenuItemText" xml:space="preserve">
+          <source>Menu Item</source>
+          <target state="new">Menu Item</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/PivotSubtitleCars" xml:space="preserve">
+          <source>cars</source>
+          <target state="new">cars</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/PivotSubtitleCharts" xml:space="preserve">
+          <source>charts</source>
+          <target state="new">charts</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/PivotSubtitleFuelLog" xml:space="preserve">
+          <source>fuel log</source>
+          <target state="new">fuel log</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/PivotSubtitleServiceLog" xml:space="preserve">
+          <source>service log</source>
+          <target state="new">service log</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/MessageLeaveNoSave" xml:space="preserve">
+          <source>Are you sure you want to leave without saving?</source>
+          <target state="new">Are you sure you want to leave without saving?</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/MessageTitleWarning" xml:space="preserve">
+          <source>Warning</source>
+          <target state="new">Warning</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/SubtitleMake" xml:space="preserve">
+          <source>Make</source>
+          <target state="new">Make</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/SubtitleModel" xml:space="preserve">
+          <source>Model</source>
+          <target state="new">Model</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/SubtitleName" xml:space="preserve">
+          <source>Name</source>
+          <target state="new">Name</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/SubtitleStartingOdometer" xml:space="preserve">
+          <source>Starting Odometer</source>
+          <target state="new">Starting Odometer</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/SubtitleVIN" xml:space="preserve">
+          <source>VIN</source>
+          <target state="new">VIN</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/SubtitleYear" xml:space="preserve">
+          <source>Year</source>
+          <target state="new">Year</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/Delete" xml:space="preserve">
+          <source>delete</source>
+          <target state="new">delete</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/DeleteCarQuestion" xml:space="preserve">
+          <source>Are you sure you want to delete this car and all of it's history?</source>
+          <target state="new">Are you sure you want to delete this car and all of it's history?</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/DeleteFuelEventQuestion" xml:space="preserve">
+          <source>Are you sure you want to delete this fuel event?</source>
+          <target state="new">Are you sure you want to delete this fuel event?</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/Distance" xml:space="preserve">
+          <source>miles</source>
+          <target state="new">miles</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/DistancePerQuantity" xml:space="preserve">
+          <source>miles per gallon</source>
+          <target state="new">miles per gallon</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/DistancePerQuantityShort" xml:space="preserve">
+          <source>mpg</source>
+          <target state="new">mpg</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/DistanceShort" xml:space="preserve">
+          <source>mi</source>
+          <target state="new">mi</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/Edit" xml:space="preserve">
+          <source>edit</source>
+          <target state="new">edit</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/FuelEvent" xml:space="preserve">
+          <source>fuel event</source>
+          <target state="new">fuel event</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/PerQuantity" xml:space="preserve">
+          <source>per gallon</source>
+          <target state="new">per gallon</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/Quantity" xml:space="preserve">
+          <source>gallons</source>
+          <target state="new">gallons</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/QuantityShort" xml:space="preserve">
+          <source>gal</source>
+          <target state="new">gal</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/Warning" xml:space="preserve">
+          <source>Warning</source>
+          <target state="new">Warning</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/MessageErrorOccurred" xml:space="preserve">
+          <source>Something is bad has occurred with this entry. Please make sure all your entries are valid.</source>
+          <target state="new">Something is bad has occurred with this entry. Please make sure all your entries are valid.</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/MessageTitleError" xml:space="preserve">
+          <source>Error</source>
+          <target state="new">Error</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/DeleteServiceEventQuestion" xml:space="preserve">
+          <source>Are you sure you want to delete this service event?</source>
+          <target state="new">Are you sure you want to delete this service event?</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/ServiceEvent" xml:space="preserve">
+          <source>service event</source>
+          <target state="new">service event</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/AddCar" xml:space="preserve">
+          <source>add car</source>
+          <target state="new">add car</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/AddFuel" xml:space="preserve">
+          <source>add fuel</source>
+          <target state="new">add fuel</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/AddService" xml:space="preserve">
+          <source>add service</source>
+          <target state="new">add service</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/MaintenanceDisplayName" xml:space="preserve">
+          <source>Maintenance</source>
+          <target state="new">Maintenance</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/NewTiresDisplayName" xml:space="preserve">
+          <source>Tires - New</source>
+          <target state="new">Tires - New</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/NoneDisplayName" xml:space="preserve">
+          <source>None</source>
+          <target state="new">None</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/OilChangeDisplayName" xml:space="preserve">
+          <source>Oil Change</source>
+          <target state="new">Oil Change</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/OtherDisplayName" xml:space="preserve">
+          <source>Other</source>
+          <target state="new">Other</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/RepairDisplayName" xml:space="preserve">
+          <source>Repair</source>
+          <target state="new">Repair</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/ReplacementPart" xml:space="preserve">
+          <source>Replacement Part</source>
+          <target state="new">Replacement Part</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/ScheduledMaintenanceDisplayName" xml:space="preserve">
+          <source>Scheduled Maintenance</source>
+          <target state="new">Scheduled Maintenance</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/TireRepairDisplayName" xml:space="preserve">
+          <source>Tires - Repair</source>
+          <target state="new">Tires - Repair</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/About" xml:space="preserve">
+          <source>about</source>
+          <target state="new">about</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/ContactEmailLabel" xml:space="preserve">
+          <source>Contact Email</source>
+          <target state="new">Contact Email</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/ContactEmailText" xml:space="preserve">
+          <source>onmydevice@gmail.com</source>
+          <target state="new">onmydevice@gmail.com</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/Version" xml:space="preserve">
+          <source>Version</source>
+          <target state="new">Version</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/WebsiteLabel" xml:space="preserve">
+          <source>Website</source>
+          <target state="new">Website</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resx/WebsiteText" xml:space="preserve">
+          <source>www.onmydevice.com</source>
+          <target state="new">www.onmydevice.com</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

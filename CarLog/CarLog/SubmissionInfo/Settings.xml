@@ -1,0 +1,6 @@
+<MarketplaceDetails>
+  <SmallAppTile>ApplicationIcon.png</SmallAppTile>
+  <ScreenShots>Screenshot1.png;Screenshot2.png;Screenshot3.png;Screenshot4.png;Screenshot5.png;Screenshot6.png;Screenshot7.png;Screenshot8.png;</ScreenShots>
+  <ScreenShotsWXGA>Screenshot1wxga.png;Screenshot2wxga.png;Screenshot3wxga.png;Screenshot4wxga.png;Screenshot5wxga.png;Screenshot6wxga.png;Screenshot7wxga.png;Screenshot8wxga.png;</ScreenShotsWXGA>
+  <ScreenShots720P>Screenshot1720p.png;Screenshot2720p.png;Screenshot3720p.png;Screenshot4720p.png;Screenshot5720p.png;Screenshot6720p.png;Screenshot7720p.png;Screenshot8720p.png;</ScreenShots720P>
+</MarketplaceDetails>

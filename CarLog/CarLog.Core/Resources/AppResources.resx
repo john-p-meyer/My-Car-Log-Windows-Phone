@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="AddCar" xml:space="preserve">
+    <value>add vehicle</value>
+  </data>
+  <data name="AddFuel" xml:space="preserve">
+    <value>add fuel</value>
+  </data>
+  <data name="AddReminder" xml:space="preserve">
+    <value>add remind</value>
+  </data>
+  <data name="AddService" xml:space="preserve">
+    <value>add service</value>
+  </data>
+  <data name="AppBarButtonText" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="AppBarMenuItemText" xml:space="preserve">
+    <value>Menu Item</value>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>MY CAR LOG</value>
+  </data>
+  <data name="CarLoan" xml:space="preserve">
+    <value>vehicle loan</value>
+  </data>
+  <data name="CarLoanAccountNumber" xml:space="preserve">
+    <value>vehicle loan account number</value>
+  </data>
+  <data name="CarLoanBankName" xml:space="preserve">
+    <value>bank name</value>
+  </data>
+  <data name="CarLoanPayment" xml:space="preserve">
+    <value>vehicle loan payment</value>
+  </data>
+  <data name="ContactEmailLabel" xml:space="preserve">
+    <value>Contact Email</value>
+  </data>
+  <data name="ContactEmailText" xml:space="preserve">
+    <value>onmydevice@gmail.com</value>
+  </data>
+  <data name="DateDisplayName" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Days" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>delete</value>
+  </data>
+  <data name="DeleteCarQuestion" xml:space="preserve">
+    <value>Are you sure you want to delete this vehicle and all of it's history?</value>
+  </data>
+  <data name="DeleteFuelEventQuestion" xml:space="preserve">
+    <value>Are you sure you want to delete this fuel event?</value>
+  </data>
+  <data name="DeleteReminderQuestion" xml:space="preserve">
+    <value>Are you sure you want to delete this reminder?</value>
+  </data>
+  <data name="DeleteServiceEventQuestion" xml:space="preserve">
+    <value>Are you sure you want to delete this service event?</value>
+  </data>
+  <data name="Distance" xml:space="preserve">
+    <value>miles</value>
+  </data>
+  <data name="DistancePerQuantity" xml:space="preserve">
+    <value>miles per gallon</value>
+  </data>
+  <data name="DistancePerQuantityShort" xml:space="preserve">
+    <value>mpg</value>
+  </data>
+  <data name="DistanceShort" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="DistanceUnits" xml:space="preserve">
+    <value>distance units</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>edit</value>
+  </data>
+  <data name="EditCar" xml:space="preserve">
+    <value>vehicle</value>
+  </data>
+  <data name="EditCost" xml:space="preserve">
+    <value>cost</value>
+  </data>
+  <data name="EditDate" xml:space="preserve">
+    <value>date</value>
+  </data>
+  <data name="EditDistance" xml:space="preserve">
+    <value>distance</value>
+  </data>
+  <data name="EditLastServiceDate" xml:space="preserve">
+    <value>last service date</value>
+  </data>
+  <data name="EditLastServiceOdometer" xml:space="preserve">
+    <value>last service odometer</value>
+  </data>
+  <data name="EditLocation" xml:space="preserve">
+    <value>location</value>
+  </data>
+  <data name="EditMonths" xml:space="preserve">
+    <value>months</value>
+  </data>
+  <data name="EditNextOdometer" xml:space="preserve">
+    <value>next service odometer</value>
+  </data>
+  <data name="EditNextServiceDate" xml:space="preserve">
+    <value>next service date</value>
+  </data>
+  <data name="EditNote" xml:space="preserve">
+    <value>note</value>
+  </data>
+  <data name="EditOdometer" xml:space="preserve">
+    <value>odometer</value>
+  </data>
+  <data name="EditReminderType" xml:space="preserve">
+    <value>reminder type</value>
+  </data>
+  <data name="EditServiceType" xml:space="preserve">
+    <value>service type</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>title</value>
+  </data>
+  <data name="FuelEvent" xml:space="preserve">
+    <value>fuel event</value>
+  </data>
+  <data name="Gallons" xml:space="preserve">
+    <value>gallons</value>
+  </data>
+  <data name="GallonsC" xml:space="preserve">
+    <value>Gallons</value>
+  </data>
+  <data name="GallonShort" xml:space="preserve">
+    <value>gal</value>
+  </data>
+  <data name="Insurance" xml:space="preserve">
+    <value>insurance</value>
+  </data>
+  <data name="InsuranceAccountNumber" xml:space="preserve">
+    <value>insurance policy number</value>
+  </data>
+  <data name="InsuranceName" xml:space="preserve">
+    <value>insurance provider</value>
+  </data>
+  <data name="InsurancePayment" xml:space="preserve">
+    <value>insurance monthly payment</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>kilometers</value>
+  </data>
+  <data name="KilometersPerGallon" xml:space="preserve">
+    <value>kilometers per gallon</value>
+  </data>
+  <data name="KilometersPerGallonShort" xml:space="preserve">
+    <value>kpg</value>
+  </data>
+  <data name="KilometersPerLiter" xml:space="preserve">
+    <value>kilometers per liter</value>
+  </data>
+  <data name="KilometersPerLiterShort" xml:space="preserve">
+    <value>kpl</value>
+  </data>
+  <data name="KilometersShort" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="KilometersSinceDisplayName" xml:space="preserve">
+    <value>Kilometers Since Last</value>
+  </data>
+  <data name="Liters" xml:space="preserve">
+    <value>liters</value>
+  </data>
+  <data name="LitersC" xml:space="preserve">
+    <value>Liters</value>
+  </data>
+  <data name="LiterShort" xml:space="preserve">
+    <value>lit</value>
+  </data>
+  <data name="MaintenanceDisplayName" xml:space="preserve">
+    <value>Maintenance</value>
+  </data>
+  <data name="MenuButtonCancel" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="MenuButtonSave" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="MessageErrorOccurred" xml:space="preserve">
+    <value>Something bad has occurred with this entry. Please make sure all your entries are valid.</value>
+  </data>
+  <data name="MessageLeaveNoSave" xml:space="preserve">
+    <value>Are you sure you want to leave without saving?</value>
+  </data>
+  <data name="MessageTitleError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="MessageTitleWarning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>miles</value>
+  </data>
+  <data name="MilesPerGallon" xml:space="preserve">
+    <value>miles per gallon</value>
+  </data>
+  <data name="MilesPerGallonShort" xml:space="preserve">
+    <value>mpg</value>
+  </data>
+  <data name="MilesPerLiter" xml:space="preserve">
+    <value>miles per liter</value>
+  </data>
+  <data name="MilesPerLiterShort" xml:space="preserve">
+    <value>mpl</value>
+  </data>
+  <data name="MilesShort" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="MilesSinceDisplayName" xml:space="preserve">
+    <value>Miles Since Last</value>
+  </data>
+  <data name="Month1" xml:space="preserve">
+    <value>1 month</value>
+  </data>
+  <data name="Month12" xml:space="preserve">
+    <value>12 month</value>
+  </data>
+  <data name="Month3" xml:space="preserve">
+    <value>3 month</value>
+  </data>
+  <data name="Month6" xml:space="preserve">
+    <value>6 month</value>
+  </data>
+  <data name="MonthsOrKilometersSinceDisplayName" xml:space="preserve">
+    <value>Months or Kilometers Since Last</value>
+  </data>
+  <data name="MonthsOrMilesSinceDisplayName" xml:space="preserve">
+    <value>Months or Miles Since Last</value>
+  </data>
+  <data name="MonthsShort" xml:space="preserve">
+    <value>mo</value>
+  </data>
+  <data name="MonthsSinceDisplayName" xml:space="preserve">
+    <value>Months Since Last</value>
+  </data>
+  <data name="MTD" xml:space="preserve">
+    <value>mtd</value>
+  </data>
+  <data name="NewTiresDisplayName" xml:space="preserve">
+    <value>Tires - New</value>
+  </data>
+  <data name="NoneDisplayName" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="OdometerDisplayName" xml:space="preserve">
+    <value>Odometer</value>
+  </data>
+  <data name="OilChangeDisplayName" xml:space="preserve">
+    <value>Oil Change</value>
+  </data>
+  <data name="OtherDisplayName" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="PerGallon" xml:space="preserve">
+    <value>per gallon</value>
+  </data>
+  <data name="PerLiter" xml:space="preserve">
+    <value>per liter</value>
+  </data>
+  <data name="PerQuantity" xml:space="preserve">
+    <value>per gallon</value>
+  </data>
+  <data name="PivotSubtitleCars" xml:space="preserve">
+    <value>vehicles</value>
+  </data>
+  <data name="PivotSubtitleCharts" xml:space="preserve">
+    <value>charts</value>
+  </data>
+  <data name="PivotSubtitleFuelLog" xml:space="preserve">
+    <value>fuel log</value>
+  </data>
+  <data name="PivotSubtitleReminderLog" xml:space="preserve">
+    <value>reminder log</value>
+  </data>
+  <data name="PivotSubtitleServiceLog" xml:space="preserve">
+    <value>service log</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>gallons</value>
+  </data>
+  <data name="QuantityShort" xml:space="preserve">
+    <value>gal</value>
+  </data>
+  <data name="QuantityUnits" xml:space="preserve">
+    <value>quantity units</value>
+  </data>
+  <data name="RefuelAverages" xml:space="preserve">
+    <value>Refuel Averages</value>
+  </data>
+  <data name="Reminder" xml:space="preserve">
+    <value>reminder</value>
+  </data>
+  <data name="RepairDisplayName" xml:space="preserve">
+    <value>Repair</value>
+  </data>
+  <data name="ReplacementPart" xml:space="preserve">
+    <value>Replacement Part</value>
+  </data>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-US</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ScheduledMaintenanceDisplayName" xml:space="preserve">
+    <value>Scheduled Maintenance</value>
+  </data>
+  <data name="ServiceEvent" xml:space="preserve">
+    <value>service event</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="SubtitleMake" xml:space="preserve">
+    <value>make</value>
+  </data>
+  <data name="SubtitleModel" xml:space="preserve">
+    <value>model</value>
+  </data>
+  <data name="SubtitleName" xml:space="preserve">
+    <value>name</value>
+  </data>
+  <data name="SubtitleStartingOdometer" xml:space="preserve">
+    <value>starting odometer</value>
+  </data>
+  <data name="SubtitleVIN" xml:space="preserve">
+    <value>vin</value>
+  </data>
+  <data name="SubtitleYear" xml:space="preserve">
+    <value>year</value>
+  </data>
+  <data name="TireRepairDisplayName" xml:space="preserve">
+    <value>Tires - Repair</value>
+  </data>
+  <data name="TotalCosts" xml:space="preserve">
+    <value>Total Costs</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="WebsiteLabel" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="WebsiteText" xml:space="preserve">
+    <value>www.onmydevice.com</value>
+  </data>
+  <data name="WebsiteURL" xml:space="preserve">
+    <value>http://www.onmydevice.com</value>
+  </data>
+  <data name="YTD" xml:space="preserve">
+    <value>ytd</value>
+  </data>
+  <data name="EditRecurring" xml:space="preserve">
+    <value>recurring</value>
+  </data>
+  <data name="FileManagement" xml:space="preserve">
+    <value>file management</value>
+  </data>
+  <data name="LoadLocal" xml:space="preserve">
+    <value>load</value>
+  </data>
+  <data name="LoadOneDrive" xml:space="preserve">
+    <value>load OneDrive</value>
+  </data>
+  <data name="SaveLocal" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="SaveOneDrive" xml:space="preserve">
+    <value>save OneDrive</value>
+  </data>
+  <data name="EditFuelGrade" xml:space="preserve">
+    <value>fuel grade</value>
+  </data>
+  <data name="EditIgnoreForStatisticts" xml:space="preserve">
+    <value>catch up entry (ignore)</value>
+  </data>
+  <data name="EditName" xml:space="preserve">
+    <value>name</value>
+  </data>
+  <data name="EditPrice" xml:space="preserve">
+    <value>price</value>
+  </data>
+  <data name="CompactView" xml:space="preserve">
+    <value>compact view</value>
+  </data>
+  <data name="NormalView" xml:space="preserve">
+    <value>normal</value>
+  </data>
+  <data name="ViewSetting" xml:space="preserve">
+    <value>view</value>
+  </data>
+  <data name="OneDriveFileLoadSuccessful" xml:space="preserve">
+    <value>Data loaded successfully.</value>
+  </data>
+  <data name="OneDriveFileSaveSuccessful" xml:space="preserve">
+    <value>Data saved successfully.</value>
+  </data>
+  <data name="OneDriveFileLoading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="OneDriveFileSaving" xml:space="preserve">
+    <value>Saving</value>
+  </data>
+  <data name="OneDriveAreYouSureLoad" xml:space="preserve">
+    <value>This will overwrite the data on your device which cannot be recovered. Are you sure you wish to load your data from online?</value>
+  </data>
+  <data name="OneDriveAreYouSureSave" xml:space="preserve">
+    <value>This will overwrite the data online which cannot be recovered. Are you sure you wish to save your data online?</value>
+  </data>
+  <data name="OneDriveFileLoadUnsuccessful" xml:space="preserve">
+    <value>The file did not load properly. Please exit My Car Log and try again.</value>
+  </data>
+  <data name="OneDriveFileNotFound" xml:space="preserve">
+    <value>MyCarLog.txt was not found online. Please save before accessing.</value>
+  </data>
+  <data name="OneDriveFileSaveUnsuccessful" xml:space="preserve">
+    <value>The file did not save properly. Please exit My Car Log and try again.</value>
+  </data>
+</root>

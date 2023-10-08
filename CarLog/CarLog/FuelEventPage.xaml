@@ -1,0 +1,124 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CarLog.FuelEventPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DataContext="{d:DesignData SampleData/SampleData.xaml}" 
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar Mode="Default" IsVisible="True">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="About" Text="about" Click="About_Click" />
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton x:Name="EditMenuButton" IsEnabled="True" Text="edit" IconUri="/Assets/AppBar/edit.png" Click="EditMenuButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="DeleteMenuButton" IsEnabled="True" Text="delete" IconUri="/Assets/AppBar/delete.png" Click="DeleteMenuButton_Click" />
+        </shell:ApplicationBar>        
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ApplicationTitleStyle}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.FuelEvent, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" d:DataContext="{Binding Cars[0].FuelEvents[0]}">
+            <ScrollViewer>
+                <Grid x:Name="ViewContentPanel" Margin="12,0,12,80" Visibility="Visible">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding DateTime, StringFormat='MMMM dd, yyyy'}" Style="{StaticResource PhoneTextLargeStyle}" />
+                    <TextBlock x:Name="txtCarTitle" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource PhoneTextLargeStyle}" Text="{Binding CarTitle}" />
+
+                    <Border Grid.Column="0" Grid.Row="2" Grid.RowSpan="4" VerticalAlignment="Center" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="4" Padding="5">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock Text="{Binding DistancePerQuantity, StringFormat=\{0:F1\}}" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" />
+                                <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.DistancePerQuantityShort, Source={StaticResource LocalizedVariableStrings}}" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}" Margin="-8 0 0 0" />
+                            </StackPanel>
+                            <TextBlock Text="{Binding TotalCost, StringFormat=\{0:C\}}" TextWrapping="NoWrap" HorizontalAlignment="Center" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneAccentBrush}"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Location}" Margin="10 0 0 0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                    
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Margin="10 0 0 0">
+                        <TextBlock Text="{Binding Price, StringFormat=\{0:C3\}}" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <TextBlock Text=" (" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <TextBlock Text="{Binding FuelGrade}" Margin="0 0 0 0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <TextBlock Text=")" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <!--TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.PerQuantity, Source={StaticResource LocalizedVariableStrings}}" Margin="5 0" Foreground="{StaticResource PhoneSubtleBrush}"/-->
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Grid.Column="1" Grid.Row="4" Margin="10 0 0 0">
+                        <TextBlock Text="{Binding Quantity, StringFormat=\{0:F3\}}" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.QuantityShort, Source={StaticResource LocalizedVariableStrings}}" Margin="5 0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="5" Margin="10 0 0 0">
+                        <TextBlock Text="{Binding Odometer, StringFormat=\{0:N0\}}" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.DistanceShort, Source={StaticResource LocalizedVariableStrings}}" Margin="5 0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <TextBlock Text="(" Margin="5 0 0 0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <TextBlock Text="{Binding Distance, StringFormat=\{0:F1\}}" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <TextBlock Text="{Binding Path=LocalizedVariableSettingsStrings.DistanceShort, Source={StaticResource LocalizedVariableStrings}}" Margin="5 0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                        <TextBlock Text=")" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                    </StackPanel>                    
+
+                    <TextBlock Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Text="{Binding Note}" TextWrapping="Wrap" Foreground="{StaticResource PhoneSubtleBrush}" Margin="0 20 0 0" />
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,124 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CarLog.ServiceEventPageEdit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DataContext="{d:DesignData SampleData/SampleData.xaml}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar Mode="Default" IsVisible="True">
+            <shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton x:Name="SaveMenuButton" IsEnabled="True" Text="save" IconUri="/Assets/AppBar/save.png" Click="SaveMenuButton_Click" />
+            <shell:ApplicationBarIconButton x:Name="CancelMenuButton" IsEnabled="True" Text="cancel" IconUri="/Assets/AppBar/cancel.png" Click="CancelMenuButton_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{Binding Cars[0].ServiceEvents[0]}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource ApplicationTitleStyle}" />
+            <TextBlock x:Name="textBlockServiceEventPageEditTitle" Text="{Binding Title}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        
+        <ScrollViewer Grid.Row="1">
+            <Grid x:Name="ViewContentEdit" Margin="12,0,12,80">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Path=LocalizedResources.EditTitle, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" />
+                <TextBox Name="txtTitle" Grid.Column="0" Grid.Row="1" Text="{Binding Title, Mode=TwoWay}" InputScope="Default" />
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding Path=LocalizedResources.EditCar, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" />
+                <toolkit:ListPicker x:Name="lstCar" Grid.Column="0" Grid.Row="3" DisplayMemberPath="Title" />
+                <TextBlock Grid.Column="0" Grid.Row="4" Text="{Binding Path=LocalizedResources.EditDate, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" />
+                <toolkit:DatePicker x:Name="datDateTime" Grid.Column="0" Grid.Row="5" Value="{Binding DateTime, Mode=TwoWay}" />
+                <TextBlock Grid.Column="0" Grid.Row="6" Text="{Binding Path=LocalizedResources.EditServiceType, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" />
+                <toolkit:ListPicker x:Name="lstServiceType" Grid.Column="0" Grid.Row="7">
+                    <toolkit:ListPicker.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding ServiceEventImagePath}" Stretch="None"/>
+                                <TextBlock Text="{Binding ServiceEventText}" Margin="4 0 0 0" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </toolkit:ListPicker.ItemTemplate>
+                    <toolkit:ListPicker.FullModeItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                                <Image Source="{Binding ServiceEventImagePath}" Stretch="None"/>
+                                <TextBlock Text="{Binding ServiceEventText}" Margin="4 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </toolkit:ListPicker.FullModeItemTemplate>
+                </toolkit:ListPicker>
+                <TextBlock Grid.Column="0" Grid.Row="8" Text="{Binding Path=LocalizedResources.EditLocation, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" />
+                <TextBox x:Name="txtLocation" Grid.Column="0" Grid.Row="9" Text="{Binding Location, Mode=TwoWay}" InputScope="Default" />
+                <TextBlock Grid.Column="0" Grid.Row="10" Text="{Binding Path=LocalizedResources.EditCost, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" />
+                <TextBox x:Name="txtCost" Grid.Column="0" Grid.Row="11" Text="{Binding Cost, Mode=TwoWay, StringFormat=\{0:C2\}}" InputScope="Number" LostFocus="txtCost_LostFocus" GotFocus="txtCost_GotFocus" />
+                <TextBlock Grid.Column="0" Grid.Row="12" Text="{Binding Path=LocalizedResources.EditOdometer, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" />
+                <TextBox x:Name="txtOdometer" Grid.Column="0" Grid.Row="13" Text="{Binding Odometer, Mode=TwoWay, StringFormat=\{0:F1\}}"  InputScope="Number" GotFocus="txtOdometer_GotFocus" LostFocus="txtOdometer_LostFocus" />
+                <TextBlock Grid.Column="0" Grid.Row="14" Text="{Binding Path=LocalizedResources.EditNote, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle3Style}" />
+                <TextBox x:Name="txtNote" Grid.Column="0" Grid.Row="15" Text="{Binding Note, Mode=TwoWay}" InputScope="Default" TextWrapping="Wrap" />
+            </Grid>
+        </ScrollViewer>        
+    </Grid>
+
+</phone:PhoneApplicationPage>
